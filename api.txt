@@ -1,0 +1,6 @@
+CSRF Token Attack Mitigation:
+When using APIs, CSRF protection can be handled by:
+- Disabling CSRF protection for API requests in Rails by adding the following line in the ApplicationController:
+  skip_before_action :verify_authenticity_token, if: -> { request.format.json? }
+- Implementing token-based authentication (e.g., JWT) to ensure that requests are made by authenticated users.
+- Using SameSite cookie attributes to prevent CSRF attacks when cookies are used for session management.
