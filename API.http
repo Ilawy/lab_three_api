@@ -1,0 +1,32 @@
+@host = http://localhost:3000
+
+###
+
+# get single post
+GET {{host}}/posts/1
+
+###
+
+# create post
+POST {{host}}/posts
+Content-Type: application/json
+
+{
+  "title": "Hello",
+  "body": "World"
+}
+
+###
+
+# update post
+PATCH {{host}}/posts/1
+Content-Type: application/json
+
+{
+    "title": "A totally new title"
+}
+
+###
+
+# delete post
+DELETE {{host}}/posts/1
